@@ -7,8 +7,22 @@
 /** DATA **/
 
 //represents the data and the methods to change the data
+
 var todoList = {
+	
+	/**
+	 * The todos
+	 * @var {array} todos
+	 */
+	
     todos : [],
+	
+	/**
+	 * Add an item to the todo array
+	 * @param {string} par1
+	 * @returns null
+	 */
+	
     add : function(par1){
       if (par1 != undefined){
           this.todos.push({
@@ -17,6 +31,13 @@ var todoList = {
           });
       }  
     },
+	
+	/**
+	 * Delete an item from the todo array
+	 * @param {string} par1
+	 * @returns null
+	 */
+	
     delete : function(par1){ //int position
         this.todos.splice(par1,1);
     },
