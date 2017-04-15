@@ -1,0 +1,88 @@
+<!--footer with tim info and social bar-->
+
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/todo.css">
+    <title> first step | make a todo list </title>
+    <meta name="description"
+          content="Tim Day investigates javascript with this Todo List project">
+    <meta name="author"
+          content="Tim Day">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- This tells mobile browers not to scale the page down by default, which allows the media queries to instead be applied -->
+
+    <!-- Fonts -->   
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400, 600' rel='stylesheet' type='text/css'>
+    
+    <!-- OG tags for social sharing -->
+    <meta property="og:site_name" content="Todo List"/>
+    <meta property="og:title" content="Todo List"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="http://timmday.com/assets/folio_photos/todo-list.png">
+    <meta property="og:url" content="http://timmday.com/projects/todoList/todo_index.html">
+    <meta property="og:type" content="website"/>
+</head>
+    
+<body>
+    
+    <section class="todo-app">
+    <header>
+        <h1>todo</h1>
+        <input id="addTodoTextInput" class="todo-item" type="text" placeholder="let it be done">
+    </header>
+    
+    <main>
+<!--        move onclick att and replace with listener -->
+        <img id="toggle-all" onclick="handlers.toggleAll()" src="assets/positive-512.png" alt="toggle all" height="20px" width="20px"/>
+        
+        <ul id="todoUl">
+        </ul>
+        
+        <div id="action-bar" class="todo-item invisible">
+            <span id='cnt-remaining'>a blank slate</span>
+            <ul id='sort-bar'>
+                <li id="all">All</li>
+                <li id="still-todo">To Do</li>
+                <li id="done">Done</li>
+            </ul>
+            <button id='clear-completed'>clear completed</button>
+        </div>
+        
+        
+    </main>
+        
+    </section>
+    
+    
+    <footer>
+        
+        <p>A learning project.
+        Object Oriented Programming Principles with Vanilla Javascript.
+        Feedback welcome!</p>
+        <ul class="menu-social">
+                    <li><a title="github" href="https://github.com/TimmDay" target="_blank">
+                        <img src="assets/social-icons-transparent/icon-github.png" alt="github"
+                        title="GitHub Tim Day"
+                        width="22"></a>
+                    </li>
+                    <li><a title="Linked In" href="https://www.linkedin.com/in/timothympday" target="_blank">
+                        <img src="assets/social-icons-transparent/icon-linkedin.png" alt="Linked In"
+                        title="Linked In Tim Day"
+                        width="22"></a>
+                    </li>
+                    <li><a title="Timmday.com" href="https://www.timmday.com" target="_blank">
+                        <img src="assets/social-icons-transparent/logo_simpleBlog.png" alt="Tim Day Folio"
+                        title="Tim Day Folio"
+                        width="22"></a>
+                    </li>
+                </ul>
+        
+    </footer>
+    
+    <script type="text/javascript" src="scripts/todo.js"></script>
+</body>
+    
+
+</html>

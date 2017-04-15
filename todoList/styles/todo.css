@@ -1,0 +1,210 @@
+/*
+delete btn only visible on hover
+*/
+
+
+/* GLOBAL */
+html {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: rgb(245, 245, 225);
+    font-size: 1.9em;
+    font-family: 'Raleway', Helvetica, sans-serif;
+    margin: 0px auto;
+    text-align: center;
+    min-width: 230px;
+    max-width: 450px;
+}
+
+/* HEADER */
+
+h1 {
+    color: #007;
+    font-weight: 100;
+/*    thin and faint*/
+}
+input {
+    padding-left: 50px;
+    border: 0;
+    font-size: 0.8em;
+}
+input::-webkit-input-placeholder {
+    text-align:center;
+    font-style: italic;
+    color: #c4c4c4;
+}
+::-moz-placeholder {
+    text-align:center;
+    font-style: italic;
+    color: #c4c4c4;
+}
+:-ms-input-placeholder {
+    text-align:center;
+    font-style: italic;
+    color: #c4c4c4;
+}
+:-moz-placeholder {
+    text-align:center;
+    font-style: italic;
+    color: #c4c4c4;
+}
+
+
+/* MAIN */
+
+main {
+    position: relative;
+    display: block;
+}
+#toggle-all{
+    position: absolute;
+    top: -43px;
+    left: 17.5px;
+}
+.todo-item {
+    list-style-position: initial;
+    list-style-image: initial;
+    list-style:none; 
+    background-color: aliceblue;
+    width: 100%;
+    box-sizing: border-box; /* padding will not make it longer */
+    padding: 16px 50px 16px 50px; /*so pushes in 50 on each side*/
+    border-bottom: solid 4px rgb(245, 245, 225);;
+    text-align:left;
+}
+.todo-item:hover >> .deleteBtn {
+    display: none;
+}
+ul {
+    padding: 0;
+    margin: 0;
+}
+li {
+    position: relative;
+    display: list-item;
+}
+
+.toggleBox {
+    display: inline-block;
+    margin-top: 6.9px;
+    position: absolute;
+    left: .5em;
+}
+.todoTitle {
+    display: inline-block;
+    margin: 0;
+    padding: 1px;
+    word-break: break-all;
+    white-space: pre-line; /* white space will collapse when pushed to new line at start of line*/
+    line-height: 1.2em;    
+}
+.deleteBtn{
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 29px;
+}
+
+/* ACTION BAR */
+#action-bar {
+    padding: 0px 10px 0px 10px;
+    position: relative;
+    display: inline-block;
+}
+
+#cnt-remaining {
+    font-size: 0.3em;
+    position: absolute;
+    top: 18px;
+    left: 30px;
+    font-style: italic;
+}
+#sort-bar {
+    padding-left: 130px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    cursor: default;
+    display: inline-block;
+    width: auto;
+}
+#sort-bar li{
+    display: inline;
+    font-size: 0.4em;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    cursor:pointer;
+}
+#sort-bar li:hover {
+    border: 1px solid #80BD9E;
+}
+.active-btn{
+    border: 1px solid #80BD9E;
+}
+
+#clear-completed {
+    position: absolute;
+    top: 11px;
+    right: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: none;
+    box-sizing: border-box;
+}
+#clear-completed:hover {
+    color: #F98866;
+}
+
+[contenteditable="true"]:focus,
+input:focus, button:focus {
+    outline: none;
+}
+
+
+/** FOOTER **/
+p {
+    font-size: 0.3em;
+    max-width: 180px;
+    margin: 0 auto;
+    line-height: 1.6em;
+    opacity: 0.18;
+    margin-top: 20px;
+}
+.menu-social {
+    display: inline-block;
+    width: auto;
+    margin-top: 7px;
+}
+.menu-social li {
+    display: inline;
+    opacity: 0.05;
+}
+
+/* classes for JS interaction */
+
+.line-through{
+    text-decoration: line-through;
+/*    other styling for completed todo title*/
+    display: inline-block;
+    margin: 0;
+    padding: 1px;
+    word-break: break-all;
+    white-space: pre-line;
+    line-height: 1.2em;
+    color: darkgrey;
+    font-style: italic;
+}
+.invisible{
+    visibility: hidden;
+}
+.visible{
+    visibility: visible;
+}
+
+/* */
+
+/* */
