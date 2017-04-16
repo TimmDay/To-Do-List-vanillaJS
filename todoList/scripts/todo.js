@@ -19,7 +19,7 @@ var todoList = {
 	
 	/**
 	 * Add an item to the todo array
-	 * @param {string} par1
+	 * @param {number} par1
 	 * @returns null
 	 */
 	
@@ -34,7 +34,7 @@ var todoList = {
 	
 	/**
 	 * Delete an item from the todo array
-	 * @param {string} par1
+	 * @param {number} par1
 	 * @returns null
 	 */
 	
