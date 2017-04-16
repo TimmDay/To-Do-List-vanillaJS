@@ -19,17 +19,25 @@ var todoList = {
 	
 	/**
 	 * Add an item to the todo array
-	 * @param {number} par1
-	 * @returns null
+	 * Demonstration of reducing code complexity. Refactoring code to get out early.  
+	 * Also, validate your inputs
+	 * Also, descriptive variable names
+	 *
+	 * @param {string} todoText
+	 * @returns null if input is empty or not a string
 	 */
 	
-    add : function(par1){
-      if (par1 != undefined){
-          this.todos.push({
-              todoText : par1,
-              completed : false
-          });
-      }  
+    add : function(todoText) {
+		
+		if (typeof todoText != 'string' || todoText == '') {
+			return;
+		}
+		
+		this.todos.push({
+		    todoText : todoText,
+		    completed : false
+		});
+		
     },
 	
 	/**
