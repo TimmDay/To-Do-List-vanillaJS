@@ -7,16 +7,45 @@
 /** DATA **/
 
 //represents the data and the methods to change the data
+
 var todoList = {
+	
+	/**
+	 * The todos
+	 * @var {array} todos
+	 */
+	
     todos : [],
-    add : function(par1){
-      if (par1 != undefined){
-          this.todos.push({
-              todoText : par1,
-              completed : false
-          });
-      }  
+	
+	/**
+	 * Add an item to the todo array
+	 * Demonstration of reducing code complexity. Refactoring code to get out early.  
+	 * Also, validate your inputs
+	 * Also, descriptive variable names
+	 *
+	 * @param {string} todoText
+	 * @returns null if input is empty or not a string
+	 */
+	
+    add : function(todoText) {
+		
+		if (typeof todoText != 'string' || todoText == '') {
+			return;
+		}
+		
+		this.todos.push({
+		    todoText : todoText,
+		    completed : false
+		});
+		
     },
+	
+	/**
+	 * Delete an item from the todo array
+	 * @param {number} par1
+	 * @returns null
+	 */
+	
     delete : function(par1){ //int position
         this.todos.splice(par1,1);
     },

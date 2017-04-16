@@ -4,19 +4,29 @@ delete btn only visible on hover
 
 
 /* GLOBAL */
-html {
+html, body {
     margin: 0px;
     padding: 0px;
+}
+
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
 }
 
 body {
     background: rgb(245, 245, 225);
     font-size: 1.9em;
     font-family: 'Raleway', Helvetica, sans-serif;
-    margin: 0px auto;
     text-align: center;
-    min-width: 230px;
-    max-width: 450px;
+}
+
+section.todo-app {
+    min-width: 300px;
+    max-width: 60vw;
+	margin: auto; 
 }
 
 /* HEADER */
@@ -59,6 +69,7 @@ main {
     position: relative;
     display: block;
 }
+
 #toggle-all{
     position: absolute;
     top: -43px;
@@ -70,10 +81,11 @@ main {
     list-style:none; 
     background-color: aliceblue;
     width: 100%;
-    box-sizing: border-box; /* padding will not make it longer */
+
     padding: 16px 50px 16px 50px; /*so pushes in 50 on each side*/
     border-bottom: solid 4px rgb(245, 245, 225);;
     text-align:left;
+	
 }
 .todo-item:hover >> .deleteBtn {
     display: none;
@@ -110,51 +122,79 @@ li {
 
 /* ACTION BAR */
 #action-bar {
-    padding: 0px 10px 0px 10px;
-    position: relative;
-    display: inline-block;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex; 
+	padding: 10px 0px 10px 10px;
+}
+
+#action-bar > * {
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1; 
+	-webkit-box-align: center; 
+	    -ms-flex-align: center; 
+	            -ms-grid-row-align: center; 
+	        align-items: center;
+	-ms-flex-line-pack: center;
+	    align-content: center; 
+  	-webkit-box-pack: center; 
+  	    -ms-flex-pack: center; 
+  	        justify-content: center;
+	white-space: nowrap; 
+	margin-right: 10px; 
+	-ms-flex-wrap: wrap; 
+	    flex-wrap: wrap; 
+    font-size: 0.4em;
 }
 
 #cnt-remaining {
-    font-size: 0.3em;
-    position: absolute;
-    top: 18px;
-    left: 30px;
     font-style: italic;
+	display: block; 
+	min-width: 50px; 
 }
+
 #sort-bar {
-    padding-left: 130px;
-    padding-bottom: 10px;
-    box-sizing: border-box;
     cursor: default;
-    display: inline-block;
-    width: auto;
+	list-style: none; 
+	display: -webkit-box; 
+	display: -ms-flexbox; 
+	display: flex; 
+	padding: 0; 
+	margin-right: 0px; 
+	margin-bottom: -10px; 
 }
-#sort-bar li{
-    display: inline;
-    font-size: 0.4em;
+
+#sort-bar li {
     padding: 5px 10px 5px 10px;
-    border-radius: 5px;
-    cursor:pointer;
-}
-#sort-bar li:hover {
+	margin: 0 10px 10px 0; 	
+    cursor: pointer;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
     border: 1px solid #80BD9E;
+    border-radius: 5px;
 }
-.active-btn{
+
+#sort-bar li:hover {
+    background: whitesmoke; 
+}
+.active-btn {
     border: 1px solid #80BD9E;
 }
 
 #clear-completed {
-    position: absolute;
-    top: 11px;
-    right: 10px;
-    padding: 5px;
-    border: none;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #80BD9E;
     border-radius: 5px;
     cursor: pointer;
     background: none;
-    box-sizing: border-box;
+	-webkit-box-flex: 0;
+	    -ms-flex-positive: 0;
+	        flex-grow: 0; 
+	text-transform: capitalize;
 }
+
 #clear-completed:hover {
     color: #F98866;
 }
@@ -172,6 +212,7 @@ p {
     margin: 0 auto;
     line-height: 1.6em;
     opacity: 0.18;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=18)";
     margin-top: 20px;
 }
 .menu-social {
@@ -182,6 +223,7 @@ p {
 .menu-social li {
     display: inline;
     opacity: 0.05;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=5)";
 }
 
 /* classes for JS interaction */
@@ -204,7 +246,5 @@ p {
 .visible{
     visibility: visible;
 }
-
-/* */
 
 /* */
