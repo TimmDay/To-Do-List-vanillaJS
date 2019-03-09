@@ -1,16 +1,10 @@
-
-// BUG change todo. click to edit, enter to confirm. BUG can only do it once...
-
 /** DATA **/
-
 //represents the data and the methods to change the data
 var todoList = {
-	
 	/**
 	 * The todos
 	 * @var {array} todos
 	 */
-	
     todos : [],
 	
 	/**
@@ -22,18 +16,14 @@ var todoList = {
 	 * @param {string} todoText
 	 * @returns null if input is empty or not a string
 	 */
-	
     add : function(todoText) {
-		
 		if (typeof todoText != 'string' || todoText == '') {
 			return;
 		}
-		
 		this.todos.push({
 		    todoText : todoText,
 		    completed : false
 		});
-		
     },
 	
 	/**
@@ -41,7 +31,6 @@ var todoList = {
 	 * @param {number} par1
 	 * @returns null
 	 */
-	
     delete : function(par1){ //int position
         this.todos.splice(par1,1);
     },
@@ -66,7 +55,6 @@ var todoList = {
                 allTrue = false;
             }
         });
-        
         //if allTrue(complete) make all false, otherwise make all true
         if (allTrue){
             this.todos.forEach(function(aTodo){
@@ -88,7 +76,6 @@ var todoList = {
         return cntNotDone;
     },
     clearComplete : function() {
-                
         //when delete, the length changes!
         for (let i=0; i<todoList.todos.length; i++){
             if(todoList.todos[i].completed){
@@ -103,7 +90,6 @@ var todoList = {
 
 /**  INTERACTION  **/
 //no external function calls in base program, for testing, hence handlers here
-//also, is this encapsulation?
 var handlers = {
     addTodo : function(input) {
         todoList.add(input);
@@ -134,7 +120,6 @@ var handlers = {
 };
 
 /** EVENT LISTENERS **/
-
 var listeners = {
     //individual todo click functionality
     setUpEventListeners : function() {
@@ -177,7 +162,6 @@ var listeners = {
         });
     },
     
-    //add todo field enter
     addTodoEventListener : function() { 
         //set up listener for the addTodo input
         //when it is clicked, callback to start listening for enter
@@ -201,7 +185,6 @@ var listeners = {
         })
     },
     setUpSortBarEventListeners : function() {
-        
         var sortAll = document.getElementById('sort-bar');
         sortAll.addEventListener('click', function(evt){
             var elClicked = evt.target;
@@ -236,7 +219,6 @@ var listeners = {
 /** VISUALISATION **/
 var view = {
     displayTodos : function(sort) {
-        
         var countRem = document.getElementById("cnt-remaining");
         countRem.textContent = todoList.countIncomplete() + ((todoList.todos.length === 1) ? " left!" : " items remaining");
         
@@ -248,7 +230,6 @@ var view = {
             actionBar.classList.remove('visible');
             actionBar.classList.add('invisible');
         }
-        
         var todosUl = document.getElementById("todoUl");
         todosUl.innerHTML = ""; //clears the list before updating fresh , no doubles
         
@@ -257,12 +238,10 @@ var view = {
         todoList.todos.forEach(function(aTodo, posn){
             if (sort === "all") {
                 createListItem();
-                
             } else if (sort === "rem") {
                 if (aTodo.completed === false) {
                     createListItem();
                 }
-                
             } else if (sort === "done") {
                 if (aTodo.completed) {
                     createListItem();
