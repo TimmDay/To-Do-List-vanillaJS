@@ -1,13 +1,9 @@
 
 // BUG change todo. click to edit, enter to confirm. BUG can only do it once...
 
-// del img only shows when hover over that li
-
-
 /** DATA **/
 
 //represents the data and the methods to change the data
-
 var todoList = {
 	
 	/**
@@ -288,13 +284,6 @@ var view = {
         },this); //the this 2nd arg, allows the this within callback to skip 2 levels
     },
     
-//    IN PROGRESS only display when min 1 todo
-    //if todoList.todos.length > 0, change attribute display: none to display: block;
-//    displayActionBar : function() {
-//        
-//    },
-    
-    
     createToggleBox : function(completed){
         var toggleBox = document.createElement("img");
         toggleBox.setAttribute('height','25px');
@@ -330,8 +319,6 @@ var view = {
         return deleteBtn;
     }
 };
-
-
 listeners.setUpEventListeners();
 listeners.addTodoEventListener();
 listeners.setUpClearCompleteEventListener();
@@ -354,10 +341,4 @@ todoList.add("pineapple");
 todoList.add("orange");
 todoList.toggleAll();
 todoList.toggleAll();
-*/
-
-
-//THEORY
-
-/* 
 */

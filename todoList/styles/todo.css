@@ -1,8 +1,3 @@
-/*
-delete btn only visible on hover
-*/
-
-
 /* GLOBAL */
 html, body {
     margin: 0px;
@@ -30,7 +25,6 @@ section.todo-app {
 }
 
 /* HEADER */
-
 h1 {
     color: #007;
     font-weight: 100;
@@ -62,14 +56,11 @@ input::-webkit-input-placeholder {
     color: #c4c4c4;
 }
 
-
 /* MAIN */
-
 main {
     position: relative;
     display: block;
 }
-
 #toggle-all{
     position: absolute;
     top: -43px;
@@ -85,9 +76,8 @@ main {
     padding: 16px 50px 16px 50px; /*so pushes in 50 on each side*/
     border-bottom: solid 4px rgb(245, 245, 225);;
     text-align:left;
-	
 }
-.todo-item:hover >> .deleteBtn {
+.todo-item:hover > .deleteBtn {
     display: none;
 }
 ul {
@@ -198,12 +188,10 @@ li {
 #clear-completed:hover {
     color: #F98866;
 }
-
 [contenteditable="true"]:focus,
 input:focus, button:focus {
     outline: none;
 }
-
 
 /** FOOTER **/
 p {
@@ -227,7 +215,6 @@ p {
 }
 
 /* classes for JS interaction */
-
 .line-through{
     text-decoration: line-through;
 /*    other styling for completed todo title*/
@@ -246,5 +233,3 @@ p {
 .visible{
     visibility: visible;
 }
-
-/* */
